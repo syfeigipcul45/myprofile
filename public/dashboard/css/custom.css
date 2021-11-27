@@ -1,0 +1,12 @@
+.cursor-pointer {
+    cursor: pointer !important;
+}
+
+.px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.h-40 {
+    height: 10rem !important;
+}
