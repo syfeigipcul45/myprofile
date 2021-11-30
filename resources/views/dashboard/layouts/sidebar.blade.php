@@ -21,8 +21,23 @@
 
 <!-- Heading -->
 <div class="sidebar-heading">
-    Interface
+    Menu Utama
 </div>
+
+<!-- Nav Item - Posts -->
+<!-- Nav Item - Pages Collapse Menu -->
+<li class="nav-item {{ Request::is('management-posts*') ? 'active' : '' }}">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePosts" aria-expanded="true" aria-controls="collapsePosts">
+        <i class="fas fa-fw fa-newspaper"></i>
+        <span>Posts</span>
+    </a>
+    <div id="collapsePosts" class="collapse {{ Request::is('management-posts*') ? 'show' : '' }}" aria-labelledby="headingPosts" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="{{route('dashboard.posts.index')}}">Post</a>
+            <a class="collapse-item" href="">Kategori Post</a>
+        </div>
+    </div>
+</li>
 
 <!-- Nav Item - Pages Collapse Menu -->
 <li class="nav-item">
@@ -104,11 +119,4 @@
 <!-- Sidebar Toggler (Sidebar) -->
 <div class="text-center d-none d-md-inline">
     <button class="rounded-circle border-0" id="sidebarToggle"></button>
-</div>
-
-<!-- Sidebar Message -->
-<div class="sidebar-card d-none d-lg-flex">
-    <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
-    <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
-    <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
 </div>

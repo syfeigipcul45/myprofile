@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\PostsController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -44,4 +45,9 @@ Route::group(['middleware' => ['auth']], function () {
     //     return Inertia::render('Dashboard');
     // })->name('dashboard');
     Route::get('/dashboard-admin', [DashboardController::class, 'index'])->name('dashboard.main.index');
+
+    //Posts
+    Route::get('/management-posts', [PostsController::class, 'index'])->name('dashboard.posts.index');
+    Route::get('/management-posts/create', [PostsController::class, 'create'])->name('dashboard.posts.create');
+    Route::post('/management-posts/store', [PostsController::class, 'store'])->name('dashboard.posts.store');
 });
